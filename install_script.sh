@@ -41,8 +41,8 @@ init_var() {
   MARIA_DATA="/tpdata/mariadb/"
   mariadb_ip="127.0.0.1"
   mariadb_port=9507
-  mariadb_user="root"
-  mariadb_pas=
+  mariadb_user="admin"
+  mariadb_pas="Aa665544"
 
   #Redis
   REDIS_DATA="/tpdata/redis/"
@@ -372,16 +372,16 @@ install_mariadb() {
     done
 
     if [[ "${mariadb_user}" == "root" ]]; then
-      docker pull mariadb:10.7.3 &&
+      docker pull mariadb:10.3 &&
         docker run -d --name trojan-panel-mariadb --restart always \
           --network=host \
           -e MYSQL_DATABASE="trojan_panel_db" \
           -e MYSQL_ROOT_PASSWORD="${mariadb_pas}" \
           -e TZ=Asia/Shanghai \
-          mariadb:10.7.3 \
+          mariadb:10.3 \
           --port ${mariadb_port}
     else
-      docker pull mariadb:10.7.3 &&
+      docker pull mariadb:10.3 &&
         docker run -d --name trojan-panel-mariadb --restart always \
           --network=host \
           -e MYSQL_DATABASE="trojan_panel_db" \
@@ -389,7 +389,7 @@ install_mariadb() {
           -e MYSQL_USER="${mariadb_user}" \
           -e MYSQL_PASSWORD="${mariadb_pas}" \
           -e TZ=Asia/Shanghai \
-          mariadb:10.7.3 \
+          mariadb:10.3 \
           --port ${mariadb_port}
     fi
 
