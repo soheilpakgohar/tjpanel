@@ -42,7 +42,7 @@ init_var() {
   mariadb_ip="127.0.0.1"
   mariadb_port=9507
   mariadb_user="root"
-  mariadb_pas="L1nkinpark"
+  mariadb_pas=
 
   #Redis
   REDIS_DATA="/tpdata/redis/"
