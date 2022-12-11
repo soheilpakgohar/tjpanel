@@ -375,8 +375,8 @@ install_mariadb() {
       docker pull mariadb:10.3 &&
         docker run -d --name trojan-panel-mariadb --restart always \
           --network=host \
-          -e MYSQL_DATABASE="trojan_panel_db" \
-          -e MYSQL_ROOT_PASSWORD="${mariadb_pas}" \
+          -e MARIADB_DATABASE="trojan_panel_db" \
+          -e MARIADB_ROOT_PASSWORD="${mariadb_pas}" \
           -e TZ=Asia/Shanghai \
           mariadb:10.3 \
           --port ${mariadb_port}
@@ -384,10 +384,10 @@ install_mariadb() {
       docker pull mariadb:10.3 &&
         docker run -d --name trojan-panel-mariadb --restart always \
           --network=host \
-          -e MYSQL_DATABASE="trojan_panel_db" \
-          -e MYSQL_ROOT_PASSWORD="${mariadb_pas}" \
-          -e MYSQL_USER="${mariadb_user}" \
-          -e MYSQL_PASSWORD="${mariadb_pas}" \
+          -e MARIADB_DATABASE="trojan_panel_db" \
+          -e MARIADB_ROOT_PASSWORD="${mariadb_pas}" \
+          -e MARIADB_USER="${mariadb_user}" \
+          -e MARIADB_PASSWORD="${mariadb_pas}" \
           -e TZ=Asia/Shanghai \
           mariadb:10.3 \
           --port ${mariadb_port}
